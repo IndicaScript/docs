@@ -88,3 +88,24 @@ r = RSI(close, 14)
 ```
 
 This computes the 14-period RSI of the **closing price**.
+
+## CompoundValue
+
+CompoundValue is a built-in function used to define recursive or cumulative variables that depend on their own previous values in time-series data.
+
+`CompoundValue(lookback, expression, initialValue)`
+
+- lookback: Number of bars to look back for the previous value (usually 1 for the immediate prior bar).
+- expression: The calculation to perform for the current bar, typically referencing the variable’s past value using indexing (e.g., var[1]).
+- initialValue: The starting value used for the very first bar when there is no prior data.
+
+### Example
+
+```
+def a = upticks - downticks;
+def b = CompoundValue(1, b[1] + a, 0);
+```
+
+This example:
+- Defines b recursively as the sum of its previous value (b[1]) plus the current difference between upticks and downticks.
+- Starts with an initial value of 0 at the first bar.
