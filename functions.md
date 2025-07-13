@@ -60,7 +60,9 @@ A positive value indicates upward momentum, while a negative value indicates dow
 
 ### Example:
 
-    m = Momentum(close, 10)
+```
+m = Momentum(close, 10)
+```
 
 This calculates the difference between the current close and the close from 10 candles ago.
 

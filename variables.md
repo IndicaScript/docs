@@ -25,8 +25,6 @@ momentum = value + momentum[1]
 
 This retrieves the value of `momentum` from the previous candlestick (`momentum[1]`), enabling time-series logic such as accumulation, smoothing, and state tracking.
 
-> Internally, this will use `CompoundValue(...)` for proper evaluation.
-
 ## Builtin Variables
 
 > Scripts typically run once per candlestick, so these variables refer to values specific to that candle (time period).
